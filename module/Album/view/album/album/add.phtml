@@ -1,0 +1,23 @@
+<?php
+$title = 'Add new album';
+$this->headTitle($title);
+?>
+
+<h1><?=$title?></h1>
+
+<?php if (count($this->errors) > 0) { ?>
+    <p>There are errors!</p>
+    <ul>
+<?php     foreach ($this->errors as $name => $messages) { ?>
+        <li><?=$name?></li>
+<?php     } ?>
+    </ul>
+<?php } ?>
+
+<form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="<?=$this->values['title']?>" />
+    <label for="artist">Artist</label>
+    <input name="artist" id="artist" value="<?=$this->values['artist']?>" />
+    <button type="submit">submit</button>
+</form>
